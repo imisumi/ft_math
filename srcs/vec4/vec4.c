@@ -6,7 +6,7 @@
 /*   By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 02:06:12 by ichiro            #+#    #+#             */
-/*   Updated: 2023/09/11 13:03:34 by imisumi          ###   ########.fr       */
+/*   Updated: 2023/09/11 15:22:13 by imisumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,3 +16,5 @@ t_vec4	vec4_new(float x, float y, float z, float w)
 {
 	return ((t_vec4){x, y, z, w});
 }
+
+// test
