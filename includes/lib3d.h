@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lib3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: imisumi-wsl <imisumi-wsl@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 02:06:12 by ichiro            #+#    #+#             */
-/*   Updated: 2023/09/11 13:03:43 by imisumi          ###   ########.fr       */
+/*   Updated: 2023/09/12 18:36:24 by imisumi-wsl      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,21 +90,54 @@ t_vec2		vec2_smoothstepf(t_vec2 a, float b, float t);
 
 t_vec3		vec3_add(t_vec3 a, t_vec3 b);
 t_vec3		vec3_sub(t_vec3 a, t_vec3 b);
+t_vec3		vec3_subf(t_vec3 a, float b);
+t_vec3		vec3_mul(t_vec3 a, t_vec3 b);
+t_vec3		vec3_mulf(t_vec3 a, float b);
+t_vec3		vec3_div(t_vec3 a, t_vec3 b);
+t_vec3		vec3_divf(t_vec3 a, float b);
 float		vec3_dot(t_vec3 a, t_vec3 b);
+t_vec3		vec3_cross(t_vec3 a, t_vec3 b);
 t_vec3		vec3_new(float x, float y, float z);
+t_vec3		vec3_normalize(t_vec3 v);
+float		vec3_length(t_vec3 v);
 
 /* ************************************************************************** */
 /*                                    vec4                                    */
 /* ************************************************************************** */
 
 t_vec4		vec4_new(float x, float y, float z, float w);
+float	vec4_length(t_vec4 v);
+
+t_vec4	vec4_normalize(t_vec4 v);
 
 /* ************************************************************************** */
 /*                                    mat4                                    */
 /* ************************************************************************** */
+t_mat4	fill_mat4(t_mat4 m, float f);
+t_mat4	create_mat4(float f);
+t_mat4	mat4_identity(void);
+t_mat4	mat4_inverse(t_mat4 m);
+
+t_mat4	mat4_perspective(float fovy, float aspect, float nearZ, float farZ);
+t_mat4	mat4_look_at(t_vec3 eye, t_vec3 center, t_vec3 up);
 
 /* ************************************************************************** */
 /*                                    quat                                    */
 /* ************************************************************************** */
+
+t_quat	quat_new(float x, float y, float z, float w);
+t_quat	quat_angle_axis(float angle, t_vec3 axis);
+t_quat	quat_cross(t_quat q1, t_quat q2);
+float	t_quat_length(t_quat q);
+t_quat	quat_normalize(t_quat q);
+
+
+t_vec3	quat_rotate(t_quat q, t_vec3 v);
+
+
+
+float fov_radians(float fov);
+
+t_vec4 mat4_mul_vec4(t_mat4 matrix, t_vec4 vector);
 
 #endif
