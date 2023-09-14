@@ -6,7 +6,7 @@
 /*   By: imisumi-wsl <imisumi-wsl@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 02:06:12 by ichiro            #+#    #+#             */
-/*   Updated: 2023/09/12 18:36:24 by imisumi-wsl      ###   ########.fr       */
+/*   Updated: 2023/09/14 15:18:51 by imisumi-wsl      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,12 @@ float		vec3_length(t_vec3 v);
 
 t_vec4		vec4_new(float x, float y, float z, float w);
 float	vec4_length(t_vec4 v);
-
+t_vec4	vec4_add(t_vec4 v1, t_vec4 v2);
+t_vec4	vec4_divf(t_vec4 v, float scalar);
 t_vec4	vec4_normalize(t_vec4 v);
+t_vec4	vec4_mul(t_vec4 v1, t_vec4 v2);
+t_vec4	vec4_mulf(t_vec4 v, float scalar);
+t_vec4 vec4_clamp(t_vec4 v, float min, float max);
 
 /* ************************************************************************** */
 /*                                    mat4                                    */
